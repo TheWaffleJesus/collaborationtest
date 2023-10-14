@@ -68,7 +68,7 @@ public class buttonUI : MonoBehaviour
 
     public void BuySecondUpgrade()
     {
-        if(playerMoney >= 50)
+        if(playerMoney >= 50 && xxmultiplier == false)
         {
             playerMoney -= 50;
             moneyText.text = playerMoney.ToString();
