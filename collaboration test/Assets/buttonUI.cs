@@ -8,7 +8,7 @@ public class buttonUI : MonoBehaviour
 
     public int playerMoney;
     public int firstauto;
-    public bool xxmultiplier;
+    public int xxmultiplier = 0;
     public Text moneyText;
     public Text status;
 
@@ -43,9 +43,9 @@ public class buttonUI : MonoBehaviour
 
     public void AddMoney()
     {
-        if (xxmultiplier == true)
+        if (xxmultiplier >= 2)
         {
-            playerMoney = playerMoney + 1 * 2;
+            playerMoney = playerMoney + 1 * xxmultiplier;
             moneyText.text = playerMoney.ToString();
         }
         else
@@ -68,11 +68,11 @@ public class buttonUI : MonoBehaviour
 
     public void BuySecondUpgrade()
     {
-        if(playerMoney >= 50 && xxmultiplier == false)
+        if(playerMoney >= 50)
         {
             playerMoney -= 50;
             moneyText.text = playerMoney.ToString();
-            xxmultiplier = true;
+            xxmultiplier += 2;
 
         }
     }
