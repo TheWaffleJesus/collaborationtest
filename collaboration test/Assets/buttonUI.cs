@@ -7,10 +7,10 @@ public class buttonUI : MonoBehaviour
 {
 
     public int playerMoney;
+    public int firstauto;
+    public bool xxmultiplier;
     public Text moneyText;
     public Text status;
-    public int firstauto;
-
 
     void Start()
     {
@@ -43,9 +43,17 @@ public class buttonUI : MonoBehaviour
 
     public void AddMoney()
     {
-        playerMoney = playerMoney + 1;
-        moneyText.text = playerMoney.ToString();
-
+        if (xxmultiplier == true)
+        {
+            playerMoney = playerMoney + 1 * 2;
+            moneyText.text = playerMoney.ToString();
+        }
+        else
+        {
+            playerMoney = playerMoney + 1;
+            moneyText.text = playerMoney.ToString();
+        }
+        
     }
 
     public void BuyFirstUpgrade()
@@ -55,6 +63,17 @@ public class buttonUI : MonoBehaviour
             playerMoney -= 10;
             moneyText.text = playerMoney.ToString();
             firstauto += 1;
+        }
+    }
+
+    public void BuySecondUpgrade()
+    {
+        if(playerMoney >= 50)
+        {
+            playerMoney -= 50;
+            moneyText.text = playerMoney.ToString();
+            xxmultiplier = true;
+
         }
     }
 }
