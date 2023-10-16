@@ -11,6 +11,7 @@ public class buttonUI : MonoBehaviour
     public int xxmultiplier = 0;
     public Text moneyText;
     public Text status;
+    public Text perSec;
 
     void Start()
     {
@@ -38,6 +39,8 @@ public class buttonUI : MonoBehaviour
         {
             status.text = "Get to work, bitch!";
         }
+
+        perSec.text = ("per second: ") + firstauto.ToString();
     }
 
 
